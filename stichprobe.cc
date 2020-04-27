@@ -6,7 +6,6 @@ int main() {
   std::ifstream fin("datensumme.txt");
   int i=0;
   int c=0;
-  int t=0;
   double n = 234;
   double a,b,m,s,x,v;
 
@@ -21,7 +20,7 @@ std::cout << m << std::endl;
 
 std::ifstream fin2("datensumme.txt");
 
-for(t=0; t<n; ++t) {
+for(i=0; i<n; ++i) {
     fin2 >> b;
     x += pow((b-m), 2);
 }
