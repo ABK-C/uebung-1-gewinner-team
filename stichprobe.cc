@@ -14,20 +14,20 @@ int main() {
   for(i=0; i<n; ++i) {
     fin >> a;
     c += a;
-
   }
 
 m = static_cast<double>(c) / n;
-std::cout << "m = " << m << std::endl;
+std::cout << m << std::endl;
 
 std::ifstream fin2("datensumme.txt");
 
 for(t=0; t<n; ++t) {
     fin2 >> b;
     x += pow((b-m), 2);
-  }
-    v = x/n;
-  std::cout << "v = " << v << std::endl;
-  std::cout << "s = " << sqrt(v) << std::endl;
+}
+
+v = x/n;
+std::cout << v << std::endl;
+std::cout << sqrt(v) << std::endl;
 fin.close();
 }
