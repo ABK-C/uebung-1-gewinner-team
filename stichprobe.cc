@@ -4,29 +4,30 @@
 
 int main() {
   std::ifstream fin("datensumme.txt");
-  int a,i,c;
-  int n = 234;
-  double m,s,x,v;
+  int i=0;
+  int c=0;
+  int t=0;
+  double n = 234;
+  double a,b,m,s,x,v;
 
   
-  for(i=0; i<(n+1); ++i) {
+  for(i=0; i<n; ++i) {
     fin >> a;
     c += a;
+
   }
 
-m = static_cast<double>(c) / static_cast<double>(n);
+m = static_cast<double>(c) / n;
 std::cout << "m = " << m << std::endl;
 
+std::ifstream fin2("datensumme.txt");
 
-for(i=0; i<(n+1); ++i) {
-    fin >> a;
-    x += pow((a-m), 2);
+for(t=0; t<n; ++t) {
+    fin2 >> b;
+    x += pow((b-m), 2);
   }
     v = x/n;
-    std::cout << "v = " << v << std::endl;
-
+  std::cout << "v = " << v << std::endl;
   std::cout << "s = " << sqrt(v) << std::endl;
-
-
 fin.close();
 }
