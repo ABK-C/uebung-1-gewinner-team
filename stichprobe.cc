@@ -2,31 +2,45 @@
 #include<fstream>
 #include<cmath>
 
-int main() {
+
+int main(){
   std::ifstream fin("datensumme.txt");
-  int i=0;
-  int c=0;
-  double n = 234;
-  double a,b,m,s,x,v;
-
-  
-  for(i=0; i<n; ++i) {
+  float a;
+  float d = 0;
+  float m;
+  float n = 234;
+  //Mittelwert
+  for(int i = 0; i < n; i++){
     fin >> a;
-    c += a;
+    d = d + a;  
   }
+  m = d / n;
+  std::cout << "Summe " << d << std::endl;
+  std::cout << "Mittelwert " << m << std::endl;
+  //Ende Mittelwert
 
-m = static_cast<double>(c) / n;
-std::cout << m << std::endl;
-
-std::ifstream fin2("datensumme.txt");
-
-for(i=0; i<n; ++i) {
+  //Varianz
+  std::ifstream fin2("datensumme.txt");
+  float vi;
+  float v;
+  float b;
+  float vs = 0;
+  for(int h = 0; h < n; h++){
     fin2 >> b;
-    x += pow((b-m), 2);
-}
+    vi = (b-m)*(b-m);
+    vs = vs + vi;
+  
+  }
+  v = vs / n;
+  std::cout << "Varianzsumme " << vs << std::endl;
+  std::cout << "Varianz " << v << std::endl;
 
-v = x/n;
-std::cout << v << std::endl;
-std::cout << sqrt(v) << std::endl;
-fin.close();
+  //Ende Varianz
+
+  //Standardabweichung
+  float s;
+  s = sqrt(v);
+  std::cout << "Standardabweichung " << s << std::endl;
+
+
 }

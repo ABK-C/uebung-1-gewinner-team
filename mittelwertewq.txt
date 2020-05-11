@@ -24,4 +24,5 @@
 3.55556
 3.44444
 3.55556
-Der Mittelwert der Mittelwerte beträgt: 3.11538
+Mittelwert der Mittelwerte = 3.11538
+Dieser Mittelwert ist exakt derselbe, wie der Mittelwert der Gesamtstichprobe aus Aufgabe 1.

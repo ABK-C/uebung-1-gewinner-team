@@ -1,0 +1,28 @@
+2.58025
+2.59259
+1.33333
+4.12346
+4.08642
+2.24691
+5.41975
+4.24691
+4.03704
+1.40741
+0.91358
+4.19753
+2.8642
+1.90123
+2.5679
+1.91358
+2.2963
+2.54321
+1.96296
+1.91358
+3.77778
+3.93827
+2.2963
+2.91358
+3.81481
+4.24691
+Mittelwert der Varianzen = 2.9283
+Dieser Mittelwert weicht vom Mittelwert der Gesamtstichprobe aus Aufgabe 1 ab. Dieser betrug nämlich 2,73455 und war somit kleiner als der Mittelwert aus den kleinen Stichproben. Daraus lässt sich schließen, dass die Abstände der Werte zum jeweiligen Mittelwert innerhalb der kleinen Stichproben größer sind, als in der Gesamtstichprobe. Dies war vorherzusehen.

@@ -2,47 +2,42 @@
 #include<fstream>
 #include<cmath>
 
-int main() {
+
+int main(){
   std::ifstream fin("datensumme.txt");
+  std::ifstream fin2("datensumme.txt");
   std::ofstream fout("mittelwerte.txt");
-  int i=0;
-  int t=0;
-  int c=0;
-  double n = 9;
-  int N=26;
-  double a,b,m,s,x,v, M, V;
+  std::ofstream fout2("varianzen.txt");
+  double a,b,c,d,e,f,g,h,v;
+  int n = 26;
+  int l = 9;
+  double m = 0;
+  double mw = 3.11538;
 
-  for(t=0; t<N; ++t){
-    c = 0;
-    for(i=0; i<n; ++i) {
+  for(int z = 0; z < n; z++){
+    b = 0;
+    
+    for(int i = 0; i < l; i++){
       fin >> a;
-        c += a;
+      b += a;
     }
-    m = static_cast<double>(c) / n;
+    m = b / l;
+    e = 0;
+    for(int j = 0; j<l; j++){
+      fin2 >> f;
+      e += pow((f-m),2);
+    }
+    v = e / l;
+    g += v;
+    c += m;
     fout << m << std::endl;
-    M += m;
+    fout2 << v << std::endl;
   }
-  fout << "Mittelwert der Mittelwerte = " << M / static_cast<double>(N) << std::endl;
-  fout << "Dieser Mittelwert ist exakt derselbe, wie der Mittelwert der Gesamtstichprobe aus Aufgabe 1." << std::endl;
+  d = c / n;
+  h = g / n;
+  fout << "Der Mittelwert der Mittelwerte beträgt: "<< d << std::endl;
+  fout2 << "Der Mittelwert der Varianzen beträgt:" << h << std::endl;
 
-std::ifstream fin2("datensumme.txt");
-std::ofstream fout2("varianzen.txt");
 
-for(t=0; t<N; ++t){
-x = 0;
-  for(i=0; i<n; ++i) {
-      fin2 >> b;
-      x += pow((b-m), 2);
-  }
-v = x/n;
-fout2 << v << std::endl;
-V += v;
-}
 
-fout2 << "Mittelwert der Varianzen = " << V / static_cast<double>(N) << std::endl; 
-fout2 << "Dieser Mittelwert weicht vom Mittelwert der Gesamtstichprobe aus Aufgabe 1 ab. Dieser betrug nämlich 2,73455 und war somit kleiner als der Mittelwert aus den kleinen Stichproben. Daraus lässt sich schließen, dass die Abstände der Werte zum jeweiligen Mittelwert innerhalb der kleinen Stichproben größer sind, als in der Gesamtstichprobe. Dies war vorherzusehen." << std::endl;
-
-fin.close();
-fout.close();
-fout2.close();
 }
